@@ -1,0 +1,31 @@
+version: '3'
+
+tasks:
+  build-very-naive:
+    cmds:
+    - mkdir -p dist
+    - g++ -o dist/very-naive main.cpp very-naive.cpp
+  build-naive:
+    cmds:
+    - mkdir -p dist
+    - g++ -o dist/naive main.cpp naive.cpp
+  build-better:
+    cmds:
+    - mkdir -p dist
+    - g++ -o dist/better main.cpp better.cpp
+  run-very-naive:
+    cmds:
+    - ./dist/very-naive
+    deps:
+    - build-very-naive
+  run-naive:
+    cmds:
+    - ./dist/naive
+    deps:
+    - build-naive
+  run-better:
+    cmds:
+    - ./dist/better
+    deps:
+    - build-better
+

@@ -1,0 +1,2 @@
+Found target: aho at position: -1
+Found target: hoge at position: 0
